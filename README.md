@@ -87,7 +87,7 @@ Check out SquadX — a much more feature-rich video chat experience:
 ## Custom Features or Help?
 
 Need something custom-built or want to collaborate?
-Feel free to reach out to me at rohitbindw@gmail.com
+Feel free to reach out to me at me@shivamdixit.engineer
 
 ## Contributing
 
@@ -99,7 +99,7 @@ Feel free to reach out to me at rohitbindw@gmail.com
 
 ## Contact
 
-Rohit Bind - [me@shivamdixit.engineer](mailto:me@shivamdixit.engineer)
+Shivam Dixit - [me@shivamdixit.engineer](mailto:me@shivamdixit.engineer)
 
 ---
 
