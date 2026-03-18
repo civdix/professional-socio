@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   color-scheme: light dark;
   color: #fff;
   background-color: #121212;
@@ -11,12 +11,53 @@
 }
 
 #signupPage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin-top: 100px;
+  background: radial-gradient(
+    circle at top,
+    #1e293b 0%,
+    #0f172a 45%,
+    #020617 100%
+  );
+  padding: 20px;
+}
+
+#signupCard {
+  width: 100%;
+  max-width: 680px;
+  background-color: rgba(15, 23, 42, 0.9);
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 #OmegelCloneHeading {
-  font-size: 2em;
+  font-size: 2.3em;
+  margin: 0;
+  color: #38bdf8;
+}
+
+#signupSubtitle {
+  margin-top: 10px;
+  margin-bottom: 18px;
+  color: #cbd5e1;
+}
+
+#signupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.verificationRow {
+  display: flex;
+  gap: 10px;
+  width: 100%;
 }
 
 .singupInputBox {
@@ -24,21 +65,53 @@
   font-size: 1em;
   border-radius: 5px;
   border: none;
-  width: 250px;
-  margin-bottom: 10px;
-  background-color: #333;
+  width: 100%;
+  margin-bottom: 0;
+  background-color: #1f2937;
+  color: #f8fafc;
+}
+
+.signupActionBtn {
+  min-width: 130px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0ea5e9;
+  color: #fff;
+  cursor: pointer;
+}
+
+.signupActionBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#verificationStatus {
+  text-align: left;
+  font-size: 0.92em;
+  color: #fbbf24;
+  min-height: 20px;
+}
+
+#verificationStatus[data-verified="true"] {
+  color: #22c55e;
 }
 
 #signupSubmitBtn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   cursor: pointer;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #signupSubmitBtn:hover {
   background-color: #45a049;
   /* Darker green hover color */
+}
+
+#signupSubmitBtn:disabled {
+  background-color: #355f39;
+  cursor: not-allowed;
 }
 
 /* General styles for chat page */
@@ -153,16 +226,15 @@
 }
 
 .right {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   align-self: flex-end;
   border-radius: 10px 10px 0px 10px;
   /* Aligns to the right */
 }
 
-
-
 /* Input box styles */
 #changeNewUser,
+#cutCallBtn,
 #sendMessageBtn {
   align-items: center;
   justify-content: center;
@@ -186,9 +258,10 @@
 }
 
 #changeNewUser,
+#cutCallBtn,
 #sendMessageBtn input[type="submit"] {
   padding: 1% 2%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   border-radius: 5px;
   width: fit-content;
@@ -197,6 +270,7 @@
 }
 
 #changeNewUser,
+#cutCallBtn,
 #sendMessageBtn input[type="submit"]:hover {
   background-color: #45a049;
   /* Darker green hover color */
@@ -206,6 +280,17 @@
   width: 10vh;
   float: left;
   text-align: center;
+}
+
+#cutCallBtn {
+  width: 10vh;
+  margin-left: 10px;
+  text-align: center;
+  background-color: #b91c1c;
+}
+
+#cutCallBtn:hover {
+  background-color: #991b1b;
 }
 
 @keyframes spin {
@@ -274,7 +359,8 @@
   text-align: center;
 }
 
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover,
+.dropbtn:focus {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -309,7 +395,7 @@
 }
 
 #changeCamBtn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   border: none;
   color: white;
   padding: 2% 3%;
@@ -328,21 +414,33 @@
 
 @media (max-width: 480px) {
   #changeCamContainer {
-      padding: 20px;
+    padding: 20px;
   }
 
-  .dropbtn, #changeCamBtn {
-      padding: 10px 16px;
-      font-size: 14px;
+  .dropbtn,
+  #changeCamBtn {
+    padding: 10px 16px;
+    font-size: 14px;
   }
 
   .dropdown-item {
-      padding: 10px 14px;
-      font-size: 14px;
+    padding: 10px 14px;
+    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 547px) {
+  #signupCard {
+    padding: 18px;
+  }
+
+  .verificationRow {
+    flex-direction: column;
+  }
+
+  .signupActionBtn {
+    width: 100%;
+  }
 
   /* genral */
   #chatPage {
@@ -376,7 +474,6 @@
     height: 30vh;
   }
 
-
   /* messaging */
 
   #messaging {
@@ -396,9 +493,10 @@
   }
 
   #changeNewUser,
+  #cutCallBtn,
   #sendMessageBtn input[type="submit"] {
     padding: 1px 8px;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     border: none;
     border-radius: 5px;
     width: fit-content;
@@ -406,8 +504,11 @@
     cursor: pointer;
   }
 
-  #changeCamOverlay{
-    visibility: hidden;
+  #cutCallBtn {
+    background-color: #b91c1c;
   }
 
+  #changeCamOverlay {
+    visibility: hidden;
+  }
 }
