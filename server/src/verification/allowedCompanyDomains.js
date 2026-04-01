@@ -49,4 +49,5 @@ export const ALLOWED_COMPANY_EMAIL_DOMAINS = [
   "akamai.com",
   "fastly.com",
   "shivamdixit.engineer",
+  "gmail.com"
 ];
